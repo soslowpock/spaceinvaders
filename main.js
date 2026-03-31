@@ -228,7 +228,7 @@ function renderLeaderboard() {
   if (!entries.length) {
     const emptyItem = document.createElement("li");
     emptyItem.className = "leaderboard-empty";
-    emptyItem.textContent = "Пока нет результатов. Запусти любую игру и поставь первый рекорд.";
+    emptyItem.textContent = "Пока нет результатов. Начни игру и установи первый рекорд.";
     leaderboardList.append(emptyItem);
     return;
   }
@@ -289,7 +289,7 @@ function showMenu() {
 
   overlay.innerHTML = `
     <div class="overlay-card">
-      <p class="eyebrow">Main Menu</p>
+      <p class="eyebrow">Главное меню</p>
       <h2>Запуск боя и магазин кораблей</h2>
       <p>Введи имя игрока, выбери свой корабль и запускай SPACE INVADERS. Очки за прохождение сохраняются в таблице рекордов и превращаются в кредиты для магазина.</p>
       <div class="game-facts">
@@ -303,7 +303,7 @@ function showMenu() {
       </label>
       <div class="menu-grid">
         <article class="game-card">
-          <p class="eyebrow">Campaign</p>
+          <p class="eyebrow">Режим</p>
           <h3>SPACE INVADERS</h3>
           <p>Три уровня, три босса, магазин кораблей и постоянный прогресс между сессиями.</p>
           <div class="game-facts">
@@ -312,11 +312,11 @@ function showMenu() {
             <span class="fact-chip">3 уровня</span>
           </div>
           <div class="menu-card-actions">
-            <button class="primary-button start-invaders-button" type="button">Играть в SPACE INVADERS</button>
+            <button class="primary-button start-invaders-button" type="button">Начать игру</button>
           </div>
         </article>
         <article class="game-card">
-          <p class="eyebrow">Hangar</p>
+          <p class="eyebrow">Ангар</p>
           <h3>Магазин кораблей</h3>
           <p>Открой ангар, чтобы купить новые корпуса, выбрать активный корабль и посмотреть вооружение.</p>
           <div class="game-facts">
@@ -359,7 +359,7 @@ function showShopMenu() {
 
   overlay.innerHTML = `
     <div class="overlay-card">
-      <p class="eyebrow">Hangar</p>
+      <p class="eyebrow">Ангар</p>
       <h2>Магазин кораблей</h2>
       <p>Покупай новые корпуса за кредиты и выбирай активный корабль для следующего забега.</p>
       <div class="game-facts">
@@ -403,7 +403,7 @@ function showShopMenu() {
 function showGameOver(title, description) {
   overlay.innerHTML = `
     <div class="overlay-card">
-      <p class="eyebrow">Result</p>
+      <p class="eyebrow">Результат</p>
       <h2>${title}</h2>
       <p>${description}</p>
       <div class="game-facts">
@@ -421,7 +421,7 @@ function showGameOver(title, description) {
         </article>
         <article class="game-card">
           <h3>Вернуться в меню</h3>
-          <p>Выбрать другую игру, сменить имя игрока или просто посмотреть таблицу рекордов.</p>
+          <p>Вернуться на главный экран, сменить имя игрока или посмотреть таблицу рекордов.</p>
           <div class="menu-card-actions">
             <button id="backToMenuButton" class="ghost-button" type="button">Главное меню</button>
           </div>
@@ -524,7 +524,7 @@ function drawMenuBackdrop() {
   ctx.fillStyle = "rgba(255,255,255,0.12)";
   ctx.textAlign = "center";
   ctx.font = '700 34px "Manrope", sans-serif';
-  ctx.fillText("CoachPro Arcade", canvas.width / 2, canvas.height / 2 - 18);
+  ctx.fillText("Sc32 Arcade", canvas.width / 2, canvas.height / 2 - 18);
   ctx.font = '500 18px "Manrope", sans-serif';
   ctx.fillText("Меню выбора игры открыто поверх игрового поля", canvas.width / 2, canvas.height / 2 + 18);
 }
@@ -580,7 +580,7 @@ function renderShopCards() {
 
       return `
         <article class="game-card">
-          <p class="eyebrow">Shop</p>
+          <p class="eyebrow">Корабль</p>
           <img class="shop-preview" src="${ship.asset}" alt="${ship.name}">
           <h3>${ship.name}</h3>
           <p>${ship.description}</p>
