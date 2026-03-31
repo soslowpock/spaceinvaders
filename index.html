@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoachPro Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="game-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">CoachPro Arcade</p>
+          <h1>SPACE INVADERS</h1>
+        </div>
+        <div class="header-actions">
+          <button id="menuButton" class="ghost-button" type="button">Главное меню</button>
+          <button id="restartButton" class="ghost-button" type="button">Рестарт</button>
+        </div>
+      </div>
+
+      <div class="status-bar">
+        <div class="status-card">
+          <span>Игрок</span>
+          <strong id="playerNameLabel">Гость</strong>
+        </div>
+        <div class="status-card">
+          <span>Режим</span>
+          <strong id="gameLabel">SPACE INVADERS</strong>
+        </div>
+        <div class="status-card">
+          <span>Очки</span>
+          <strong id="scoreLabel">0</strong>
+        </div>
+        <div class="status-card">
+          <span>Жизни</span>
+          <strong id="livesLabel">0</strong>
+        </div>
+        <div class="status-card">
+          <span id="progressTitleLabel">Прогресс</span>
+          <strong id="progressLabel">0</strong>
+        </div>
+      </div>
+
+      <div class="combat-strip">
+        <div class="combat-chip">
+          <span>Корабль</span>
+          <strong id="shipLabel">Базовый</strong>
+        </div>
+        <div class="combat-chip">
+          <span>Оружие</span>
+          <strong id="weaponLabel">Стандартный выстрел</strong>
+        </div>
+        <div class="combat-chip">
+          <span>Спецрежим</span>
+          <strong id="specialLabel">Готов</strong>
+        </div>
+        <div class="combat-chip danger-chip" id="dangerChip">
+          <span>Опасность</span>
+          <strong id="dangerLabel">Нет угроз</strong>
+        </div>
+      </div>
+
+      <div class="canvas-frame">
+        <canvas id="gameCanvas" width="960" height="600" aria-label="Arcade games"></canvas>
+        <div id="overlay" class="overlay visible"></div>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <section class="sidebar-card">
+        <p class="eyebrow">Leaderboard</p>
+        <div class="leaderboard-header">
+          <h2>Таблица рекордов</h2>
+          <button id="clearLeaderboardButton" class="ghost-button" type="button">Очистить</button>
+        </div>
+        <ol id="leaderboardList" class="leaderboard-list"></ol>
+        <p class="sidebar-note">Результаты сохраняются в браузере и доступны отдельно для обеих игр даже после перезапуска страницы.</p>
+      </section>
+
+      <section class="sidebar-card">
+        <p class="eyebrow">Controls</p>
+        <h2 id="rulesTitle">Как играть</h2>
+        <ul id="rulesList" class="rules-list"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <script src="./main.js"></script>
+</body>
+</html>
